@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titanic Survival Prediction</title>
+
+</head>
+
+    <body style="background-color: rgb(153, 153, 255) ;">
+            <div class="content">
+                <h1 style="text-align: center">Titanic Survival Prediction</h1>
+
+                <div class="form">
+                    <p><b>Enter the Required Parameters :</b></p>
+                    <form action="/Prediction" method="POST" autocomplete="on">
+
+
+
+                        <label for="Pclass">Passenger Class</label>
+                        <select name="Pclass" id="Pclass">
+                            <option value=1>First Class</option>
+                            <option value=2>Business Class</option>
+                            <option value=3>Economy Class</option>
+                        </select>
+                        &nbsp;
+                        <label for="sex">Sex</label>
+                        <select name="sex" id="sex">
+                            <option value="female">Female </option>
+                            <option value="male">Male </option>
+                        </select>
+                        &nbsp;
+                        <label for="Age">Age</label>
+                        <input type="number" name="Age" id="Age" placeholder="Age" step="any">
+                        &nbsp;
+                        <label for="SibSP">Siblings Onboard</label>
+                        <input type="number" name="SibSP" id="SibSP" placeholder="Siblings Onboard" step="any">
+                        &nbsp;
+                        <label for="Parch">Parents/Children Onboard</label>
+                        <input type="number" name="Parch" id="Parch" placeholder="Parents/Children Onboard" step="any">
+                        &nbsp;
+                        <label for="Fare">Fare</label>
+                        <input name="Fare" id="Fare" placeholder="Fare" step="any">
+
+                        <input type="submit" value="Predict">
+                    </form>
+                    <br><br>
+
+                    <div style="text-align : center ;">
+                    <img src="https://source.unsplash.com/1600x900/?Cruise,Yacht,Ship" alt="Titanic" style="text-align : center ;">
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+
