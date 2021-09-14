@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Boston House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+    <body style="background-color: rgb(151, 158, 168);">
+            <div class="content">
+                <h1 style="text-align: center">Boston House Price Prediction</h1>
+
+                <div class="form">
+                    <p><b>Enter the Required Parameters :</b></p>
+                    <form action="/Prediction" method="POST" autocomplete="on">
+                        <label for="CRIM">CRIM</label>
+                        <input type="number" name="CRIM" id="CRIM" placeholder="Crime Rate" step="any">
+                        &nbsp; &nbsp;
+                        <label for="ZN">ZN </label>
+                        <input type="number" name="ZN" id="ZN" placeholder=" prop.-resid. zoned laned" step="any">
+                        &nbsp; &nbsp;
+                        <label for="INDUS">INDUS</label>
+                        <input type="number" name="INDUS" id="INDUS" placeholder=" non-retail business prop." step="any">
+                        &nbsp; &nbsp;
+                        <label for="CHAS">CHAS</label>
+                        <select name="CHAS" id="CHAS" >
+                            <option value=1>Yes</option>
+                            <option value=0>No</option>
+                        </select>
+                        &nbsp; &nbsp;
+                        <label for="NOX">NOX</label>
+                        <input type="number" name="NOX" id="NOX" placeholder="NO2 ppm concentration" step="any">
+                        &nbsp; &nbsp;
+                        <label for="RM">RM</label>
+                        <input type="number" name="RM" id="RM" placeholder="avg. rooms/dwelling" step="any">
+                        &nbsp; &nbsp;
+                        <label for="AGE">AGE</label>
+                        <input type="number" name="AGE" id="AGE" placeholder="Age" step="any">
+                        <br><br>
+                        <label for="DIS">DIS</label>
+                        <input type="number" name="DIS" id="DIS" placeholder="weighted dist to 5 Boston employment centres" step="any">
+                        &nbsp; &nbsp;
+                        <label for="RAD">RAD</label>
+                        <input type="number" name="RAD" id="RAD" placeholder="Accesibility index-Radial Highways" step="any">
+                        &nbsp; &nbsp;
+                        <label for="TAX">TAX</label>
+                        <input type="number" name="TAX" id="TAX" placeholder="TAX" step="any">
+                        &nbsp; &nbsp;
+                        <label for="PTRATIO">PTRATIO</label>
+                        <input type="number" name="PTRATIO" id="PTRATIO" placeholder=" pupil-teacher ratio" step="any">
+                        &nbsp; &nbsp;
+                        <label for="B">B</label>
+                        <input type="number" name="B" id="B" placeholder="B" step="any">
+                        &nbsp; &nbsp;
+                        <label for="LSTAT">LSTAT</label>
+                        <input type="number" name="LSTAT" id="LSTAT" placeholder="% lower status-population" step="any">
+                        &nbsp; &nbsp;
+                        <input type="submit" value="Predict">
+                    </form>
+                    <br><br>
+
+                    <div style="text-align : center ;">
+                    <img src="https://source.unsplash.com/1600x900/?residence" alt="House" style="text-align : center ;">
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+
