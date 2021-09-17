@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Wage Class Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+    <body style="background-color: rgb(128, 80, 80);">
+            <div class="content">
+                <h1 style="text-align: center">Wage Class Classification </h1>
+
+                <div class="form">
+                    <p><b>Enter the Required Parameters :</b></p>
+                    <form action="/Prediction" method="POST" autocomplete="on">
+
+                        <label for="age">AGE</label>
+                        <input type="number" name="age" id="age" placeholder="Age" step="any">
+                        &nbsp &nbsp
+                        <label for="workclass">Workclass</label>
+                        <select name="workclass" id="workclass" >
+                            <option value=0>Never-worked</option>
+                            <option value=1>Without-pay</option>
+                            <option value=2>State-gov</option>
+                            <option value=3>Federal-gov</option>
+                            <option value=4>Local-gov</option>
+                            <option value=5>Self-emp-inc</option>
+                            <option value=6>Self-emp-not-inc</option>
+                            <option value=7>Private</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="fnlwgt">fnlwgt</label>
+                        <input type="number" name="fnlwgt" id="fnlwgt" placeholder="fnlwgt" step="any">
+                        &nbsp &nbsp
+
+                        <label for="education">Education</label>
+                        <select name="education" id="education" >
+                            <option value=0>Preschool</option>
+                            <option value=1>1st-4th</option>
+                            <option value=2>5th-6th</option>
+                            <option value=3>7th-8th</option>
+                            <option value=4>9th</option>
+                            <option value=5>10th</option>
+                            <option value=6>11th</option>
+                            <option value=7>12th</option>
+                            <option value=8>HS-grad</option>
+                            <option value=9>Prof-school</option>
+                            <option value=10>Some-college</option>
+                            <option value=11>Assoc-acdm</option>
+                            <option value=12>Assoc-voc</option>
+                            <option value=13>Bachelors</option>
+                            <option value=14>Masters</option>
+                            <option value=15>Doctorate</option>
+
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="education_num">Education_Num</label>
+                        <select name="education_num" id="education_num" >
+                            <option value=0>1</option>
+                            <option value=1>2</option>
+                            <option value=2>3</option>
+                            <option value=3>4</option>
+                            <option value=4>5</option>
+                            <option value=5>6</option>
+                            <option value=6>7</option>
+                            <option value=7>8</option>
+                            <option value=8>9</option>
+                            <option value=9>10</option>
+                            <option value=10>11</option>
+                            <option value=11>12</option>
+                            <option value=12>13</option>
+                            <option value=13>14</option>
+                            <option value=14>15</option>
+                            <option value=15>16</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="marital_status">Marital Status</label>
+                        <select name="marital_status" id="marital_status" >
+                            <option value='Married-civ-spouse'>Married-civ-spouse</option>
+                            <option value='Never-married'>Never-married</option>
+                            <option value='Divorced'>Divorced</option>
+                            <option value='Separated'>Separated</option>
+                            <option value='Widowed'>Widowed</option>
+                            <option value='Married-spouse-absent'>Married-spouse-absent</option>
+                            <option value='Married-AF-spouse'>Married-AF-spouse</option>
+                        </select>
+                        <br><br>
+
+                        <label for="occupation">Occupation</label>
+                        <select name="occupation" id="occupation" >
+                            <option value=0>Priv-house-serv</option>
+                            <option value=1>Other-service</option>
+                            <option value=2>Handlers-cleaners</option>
+                            <option value=3>Farming-fishing</option>
+                            <option value=4>Machine-op-inspct</option>
+                            <option value=5>Adm-clerical</option>
+                            <option value=6>Transport-moving</option>
+                            <option value=7>Craft-repair</option>
+                            <option value=8>Sales</option>
+                            <option value=9>Tech-support</option>
+                            <option value=10>Protective-serv'</option>
+                            <option value=11>Armed-Forces</option>
+                            <option value=12>Prof-specialty</option>
+                            <option value=13>Exec-managerial</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="relationship">Relationship</label>
+                        <select name="relationship" id="relationship" >
+                            <option value='Husband'>Husband</option>
+                            <option value='Not-in-family'>Not-in-family</option>
+                            <option value='Own-child'>Own-child</option>
+                            <option value='Unmarried'>Unmarried</option>
+                            <option value='Wife'>Wife</option>
+                            <option value='Other-relative'>Other-relative</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="race">Race</label>
+                        <select name="race" id="race" >
+                            <option value='White'>White</option>
+                            <option value='Black'>Black</option>
+                            <option value='Asian-Pac-Islander'>Asian-Pac-Islander</option>
+                            <option value='Amer-Indian-Eskimo'>Amer-Indian-Eskimo</option>
+                            <option value='Other'>Other</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="sex">Sex</label>
+                        <select name="sex" id="sex" >
+                            <option value=1>male</option>
+                            <option value=0>female</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <label for="capital_gain">Capital Gain</label>
+                        <input type="number" name="capital_gain" id="capital_gain" placeholder="Capital Gain" step="any">
+                        &nbsp &nbsp
+
+                        <label for="capital_loss">Capital loss</label>
+                        <input type="number" name="capital_loss" id="capital_loss" placeholder="Capital loss" step="any">
+                        <br><br>
+
+                        <label for="hours_per_week">Hours per Week</label>
+                        <input type="number" name="hours_per_week" id="hours_per_week" placeholder="working_hrs_per_week" step="any">
+                        &nbsp &nbsp
+
+                        <label for="native_country">Native Country in</label>
+                        <select name="native_country" id="native_country" >
+                            <option value="North_America">North_America</option>
+                            <option value='Central_America'>Central_America</option>
+                            <option value='South_America'>South_America</option>
+                            <option value='EU'>Europe</option>
+                            <option value='Asian'>Asia</option>
+                        </select>
+                        &nbsp &nbsp
+
+                        <input type="submit" value="Predict">
+                    </form>
+                    <br><br>
+
+                    <div style="text-align : center ;">
+                    <img src="https://source.unsplash.com/1600x900/?coins,money,cash" alt="money" style="text-align : center ;">
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+
